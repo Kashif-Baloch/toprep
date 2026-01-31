@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
         headers: {
           "Retry-After": Math.ceil((rl.resetAt - Date.now()) / 1000).toString(),
         },
-      }
+      },
     );
   }
 
@@ -25,15 +25,16 @@ export async function POST(req: NextRequest) {
     if (!username || !password) {
       return NextResponse.json(
         { error: "Missing credentials" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
-    const ok = await verifyAdminCredentials(username, password);
+    const ok = await verifyAdminCredentials(password);
+    // const ok = await verifyAdminCredentials(username, password);
     if (!ok) {
       return NextResponse.json(
         { error: "Invalid credentials" },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -53,7 +54,7 @@ export async function POST(req: NextRequest) {
     console.log(e);
     return NextResponse.json(
       { error: "Something went wrong" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
