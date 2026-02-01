@@ -149,7 +149,7 @@ export default function AboutSection() {
           />
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-16 mb-20 mt-16 md:mt-28 lg:mt-44">
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-16 mb-20 mt-16 md:mt-28 lg:mt-44">
         <div className="flex-1">
           <Image
             src="/mission.jpg"

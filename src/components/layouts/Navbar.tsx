@@ -86,6 +86,18 @@ const Navbar = () => {
     getPlanStatus();
   }, [session]);
 
+  useEffect(() => {
+    if (showNav) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [showNav]);
+
   const links = [
     "Professional Dressing and Attire",
     "Key Performance Indicators",
@@ -233,7 +245,7 @@ const Navbar = () => {
               Contact Us
             </Link>
             <Button
-              className="bg-emerald-500 !my-4 hover:bg-emerald-600 border border-white uppercase text-white !py-3 !px-10 rounded-md text-sm"
+              className="bg-emerald-500 hover:bg-emerald-600 border border-white uppercase text-white rounded-md text-sm w-fit h-[50px]"
               onClick={() => {
                 plan?.plan === "pro" && plan?.status === "active"
                   ? router.push("/calendly")
