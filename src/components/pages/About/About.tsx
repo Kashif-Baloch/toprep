@@ -15,7 +15,7 @@ import Link from "next/link";
 
 export default function AboutSection() {
   const stats = [
-    { number: 5000, label: "Medical Representatives Trained", suffix: "+" },
+    { number: 500, label: "Medical Representatives Trained", suffix: "+" },
     { number: 98, label: "Success Rate", suffix: "%" },
     { number: 50, label: "Pharmaceutical Companies", suffix: "+" },
     { number: 24, label: "Expert Support", suffix: "/7" },

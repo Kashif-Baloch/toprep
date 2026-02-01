@@ -50,7 +50,7 @@ const Navbar = () => {
 
       if (sessionId) {
         const stripe = await import("@stripe/stripe-js").then((mod) =>
-          mod.loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
+          mod.loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!),
         );
         if (!stripe) {
           throw new Error("Stripe failed to initialize");
@@ -88,13 +88,13 @@ const Navbar = () => {
 
   const links = [
     "Professional Dressing and Attire",
-    "Communication Skills",
     "Key Performance Indicators",
     "Selling Skills",
     "Relation Building",
     "Education",
     "AI",
   ];
+
   return (
     <header className="fixed bg-white backdrop-blur-md top-0 left-0 w-full z-50">
       <div className="container mx-auto md:px-4 px-2 flex items-center justify-between py-5">
@@ -237,7 +237,7 @@ const Navbar = () => {
               onClick={() => {
                 plan?.plan === "pro" && plan?.status === "active"
                   ? router.push("/calendly")
-                  : handleClick("pro", 9900);
+                  : handleClick("pro", 4900);
               }}
             >
               Book a Consultant

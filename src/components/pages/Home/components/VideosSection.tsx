@@ -22,7 +22,6 @@ const Videos = () => {
   const tabs = [
     "Health and Fitness",
     "Professional Dressing and Attire",
-    "Communication Skills",
     "Key Performance Indicators",
     "Selling Skills",
     "Relation Building",
@@ -39,7 +38,7 @@ const Videos = () => {
         setLoading(true);
         setError(null);
         const res = await api.get(
-          `/v1/media/get-videos?category=${tab}&page=${page}&limit=${limit}`
+          `/v1/media/get-videos?category=${tab}&page=${page}&limit=${limit}`,
         );
         setVideos(res.data.videos);
         setTotalVideos(res.data.totalVideos);

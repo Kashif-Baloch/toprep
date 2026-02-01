@@ -17,7 +17,7 @@ export default function ContactSection() {
   const handleInputChange = (
     e:
       | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
+      | React.ChangeEvent<HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -32,7 +32,7 @@ export default function ContactSection() {
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       toast.error(
-        "Please fill in all required fields (Name, Email, and Message)"
+        "Please fill in all required fields (Name, Email, and Message)",
       );
       return;
     }
@@ -75,7 +75,7 @@ export default function ContactSection() {
       console.error("Error:", error);
       if (error instanceof Error) {
         toast.error(
-          error.message || "Failed to send message. Please try again."
+          error.message || "Failed to send message. Please try again.",
         );
       } else {
         toast.error("Failed to send message. Please try again.");
@@ -124,7 +124,7 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="flex items-center justify-start gap-4">
+            {/* <div className="flex items-center justify-start gap-4">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
                 <MapPin className="w-6 h-6 text-blue-600" />
               </div>
@@ -134,7 +134,7 @@ export default function ContactSection() {
                   123 Pharma Street, Medical District
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

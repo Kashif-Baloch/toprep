@@ -26,28 +26,28 @@ const links = [
 const socialLinks = [
   {
     name: "Facebook",
-    href: "https://facebook.com",
+    href: "https://web.facebook.com/profile.php?id=61585709657675",
     icon: Facebook,
   },
   {
     name: "Twitter",
-    href: "https://twitter.com",
+    href: "https://x.com/HamzaSa19863212",
     icon: Twitter,
   },
   {
     name: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/hamza9797/",
     icon: Instagram,
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/hamza-sarwar-648a48394/",
     icon: Linkedin,
   },
 
   {
     name: "Email",
-    href: "mailto:contact@toprep.com",
+    href: "mailto:hamza9797.hs@gmail.com",
     icon: Mail,
   },
 ];
@@ -93,6 +93,7 @@ export default function Footer() {
                 return (
                   <Link
                     key={index}
+                    target="_blank"
                     href={social.href}
                     className="group bg-emerald-600 hover:bg-white p-3 rounded-full transition-all duration-300 transform hover:scale-110"
                     aria-label={social.name}

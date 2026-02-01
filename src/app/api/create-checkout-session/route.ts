@@ -10,12 +10,12 @@ export async function POST(req: Request) {
     // Define plan details
     const planDetails = {
       basic: {
-        price: 4900, // $49.00 in cents
+        price: 1000, // $10.00 in cents
         name: "Basic Plan",
         description: "Monthly subscription for Basic plan",
       },
       pro: {
-        price: 9900, // $99.00 in cents
+        price: 4900, // $49.00 in cents
         name: "Pro Plan",
         description: "One-time payment for 1-on-1 Consultation",
       },
@@ -51,7 +51,7 @@ export async function POST(req: Request) {
     console.error("Error creating checkout session:", err);
     return NextResponse.json(
       { error: "Error creating checkout session" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

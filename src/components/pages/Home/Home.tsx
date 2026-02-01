@@ -45,7 +45,7 @@ export default function Home() {
   const handleClick = async (
     plan: "basic" | "pro",
     amount: number,
-    planId: string
+    planId: string,
   ) => {
     setPlanId(planId);
     setIsLoading(true);
@@ -71,7 +71,7 @@ export default function Home() {
 
       if (sessionId) {
         const stripe = await import("@stripe/stripe-js").then((mod) =>
-          mod.loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
+          mod.loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!),
         );
         if (!stripe) {
           throw new Error("Stripe failed to initialize");
@@ -310,20 +310,20 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
-              onClick={() => handleClick("basic", 4900, "basic_id")}
+              onClick={() => handleClick("basic", 1000, "basic_id")}
               size="lg"
               className="bg-emerald-500 cursor-pointer hover:bg-emerald-400 text-white px-12 h-14 text-sm font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {isLoading && planId === "basic_id"
                 ? "Loading..."
-                : "Subscribe Now for $49/Month"}
+                : "Subscribe Now for $10/Month"}
             </Button>
             {/* <Link href={"/calendly"}> */}
             <Button
               onClick={() => {
                 plan?.plan === "pro" && plan?.status === "active"
                   ? router.push("/calendly")
-                  : handleClick("pro", 9900, "pro_id");
+                  : handleClick("pro", 4900, "pro_id");
               }}
               size="lg"
               variant="outline"
@@ -331,7 +331,7 @@ export default function Home() {
             >
               {isLoading && planId === "pro_id"
                 ? "Loading..."
-                : "Subscribe Now for $99/Month"}
+                : "Subscribe Now for $49/Month"}
             </Button>
             {/* </Link> */}
           </div>
@@ -347,7 +347,7 @@ export default function Home() {
               <Card className="shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-center text-blue-800">
-                    Monthly Subscription - $49
+                    Monthly Subscription - $10
                   </CardTitle>
                   <CardDescription className="text-center">
                     Full access to all video content and resources
@@ -386,12 +386,12 @@ export default function Home() {
                     </div>
                   </div>
                   <Button
-                    onClick={() => handleClick("basic", 4900, "basic_id_1")}
+                    onClick={() => handleClick("basic", 1000, "basic_id_1")}
                     className="w-full bg-emerald-500 hover:bg-emerald-600 text-white h-12  font-semibold"
                   >
                     {isLoading && planId === "basic_id_1"
                       ? "Loading..."
-                      : "Subscribe Now for $49/Month"}
+                      : "Subscribe Now for $10/Month"}
                   </Button>
                 </CardContent>
               </Card>
@@ -402,7 +402,7 @@ export default function Home() {
                     1-on-1 Strategy Consultation
                   </CardTitle>
                   <CardDescription className="text-center">
-                    Personalized sales coaching session - $99/hour
+                    Personalized sales coaching session - $49/hour
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -442,7 +442,7 @@ export default function Home() {
                     onClick={() => {
                       plan?.plan === "pro" && plan?.status === "active"
                         ? router.push("/calendly")
-                        : handleClick("pro", 9900, "pro_id_1");
+                        : handleClick("pro", 4900, "pro_id_1");
                     }}
                     className="w-full bg-blue-600 hover:bg-blue-800 text-white h-12 font-semibold mt-8"
                   >
